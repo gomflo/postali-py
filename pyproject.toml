@@ -1,0 +1,54 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "postali"
+dynamic = ["version"]
+description = "Cliente oficial de la API gratuita de códigos postales de Postali (México, Colombia, España). Sin dependencias."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Postali", email = "hi@postali.app" }]
+keywords = [
+  "codigo postal", "códigos postales", "cp", "sepomex", "colonias",
+  "postal code", "zip code", "mexico", "colombia", "spain", "geonames", "api",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Natural Language :: Spanish",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Internet :: WWW/HTTP",
+  "Topic :: Software Development :: Libraries",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://postali.app"
+Documentation = "https://postali.app/api/docs"
+Repository = "https://github.com/gomflo/postali-py"
+Issues = "https://github.com/gomflo/postali-py/issues"
+
+[tool.hatch.version]
+path = "src/postali/_version.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/postali"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/postali", "tests", "README.md", "LICENSE", "pyproject.toml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["live: pruebas contra la API real (POSTALI_LIVE=1)"]
