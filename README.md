@@ -15,6 +15,8 @@ Cliente oficial para Python de la **API gratuita de códigos postales de [Postal
 pip install postali-api
 ```
 
+El paquete se instala como `postali-api` y se importa como `postali`.
+
 ## Uso rápido
 
 ```python
