@@ -12,7 +12,7 @@ Cliente oficial para Python de la **API gratuita de códigos postales de [Postal
 ## Instalación
 
 ```bash
-pip install postali
+pip install postali-api
 ```
 
 ## Uso rápido
